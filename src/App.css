@@ -1,0 +1,42 @@
+.App {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .App header {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .App .controls {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+  }
+
+  .App .controls label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .App .controls input {
+    width: 60px;
+    padding: 5px;
+    font-size: 1em;
+  }
+
+  .grid-container {
+    /* Add any specific container styling if needed, e.g., for scrolling large grids */
+  }
+
+  /* Optional: Improve focus indication for accessibility on the grid itself */
+  /* svg:focus-visible {
+    outline: 2px solid dodgerblue;
+    outline-offset: 2px;
+  } */
