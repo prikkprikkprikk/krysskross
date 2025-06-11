@@ -1,0 +1,20 @@
+# PHP/Laravel
+backend/vendor/
+backend/node_modules/
+backend/.env
+
+# React
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# IDE/Editor folders
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Other
+node_modules
