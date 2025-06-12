@@ -23,5 +23,6 @@ export interface CrosswordPuzzleData {
   title: string;
   rows: number;
   cols: number;
+  cellSize: number;
   cells: CrosswordCell[];
 }

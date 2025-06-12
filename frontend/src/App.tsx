@@ -8,6 +8,7 @@ function App() {
     title: 'Test-kryssord',
     rows: 5,
     cols: 5,
+    cellSize: 50,
     cells: [
 
     ]
