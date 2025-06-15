@@ -1,18 +1,8 @@
 import './App.css'
 import CrosswordPuzzle from './components/CrosswordPuzzle';
+import { samplePuzzle } from "../test/sample-puzzles/sample-puzzle-01.ts";
 
 function App() {
-
-  const samplePuzzle = {
-    id: 'puzzle-1',
-    title: 'Test-kryssord',
-    rows: 5,
-    cols: 5,
-    cellSize: 50,
-    cells: [
-
-    ]
-  }
 
   return (
     <>

@@ -6,8 +6,44 @@
   align-items: center;
 }
 
-.cellBorder {
-  fill: none;
+.cellBackground {
+  fill: #ffffff;
   stroke: #000000;
   stroke-width: var(--strokeWidth);
+  cursor: pointer;
+}
+
+.cell {
+  text {
+    pointer-events: none;
+    font-weight: 500;
+  }
+  rect.highlight {
+    mix-blend-mode: multiply;
+    stroke: none;
+    fill: none;
+    pointer-events: none;
+  }
+  &.selected {
+    rect.highlight {
+      fill: #e6f2ff;
+      stroke: #4a90e2;
+      stroke-width: 10px;
+    }
+  }
+  &.highlighted {
+    rect.highlight {
+      fill: #e6f2ff;
+    }
+  }
+
+  .emptyCell {
+  }
+
+  &.clueCell {
+    text {
+      font-size: 10px;
+      font-weight: 600;
+    }
+  }
 }

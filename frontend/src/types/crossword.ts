@@ -1,22 +1,35 @@
-export interface BaseCrosswordCell {
-  id: string;
+import type {GridPosition} from "./CellGeometry.ts";
+
+export type Direction = 'across' | 'down';
+
+export type CellType = 'empty' | 'solution' | 'clue';
+
+export interface BaseCellData {
+  position: GridPosition;
+  cellType: CellType;
 }
 
-export interface SolutionCell extends BaseCrosswordCell {
-  letter?: string;
+export interface EmptyCellData extends BaseCellData {
+  cellType: 'empty';
 }
 
-export interface Clue {
-  startCell: BaseCrosswordCell;
-  direction: 'across' | 'down';
+export interface SolutionCellData extends BaseCellData {
+  cellType: 'solution';
+  letter: string;
+}
+
+export interface ClueData {
+  startCell: GridPosition;
+  direction: Direction;
   text: string;
 }
 
-export interface ClueCell extends BaseCrosswordCell {
-  clues?: Clue[];
+export interface ClueCellData extends BaseCellData {
+  cellType: 'clue';
+  clues: ClueData[];
 }
 
-export type CrosswordCell = SolutionCell | ClueCell;
+export type CellData = EmptyCellData | SolutionCellData | ClueCellData;
 
 export interface CrosswordPuzzleData {
   id: string;
@@ -24,5 +37,5 @@ export interface CrosswordPuzzleData {
   rows: number;
   cols: number;
   cellSize: number;
-  cells: CrosswordCell[];
+  cells: CellData[];
 }

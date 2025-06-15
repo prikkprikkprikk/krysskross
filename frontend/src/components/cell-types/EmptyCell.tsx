@@ -1,19 +1,18 @@
-import type {CellPlacement} from "../CrosswordPuzzle.tsx";
+import type {CellSize} from "../../types";
 
 interface EmptyCellProps {
-  cellPlacement: CellPlacement;
+  cellSize: CellSize;
 }
 
-function EmptyCell({cellPlacement}: EmptyCellProps) {
+function EmptyCell({cellSize}: EmptyCellProps) {
   return (
-    <g className="cell">
-      <rect className="cellBorder"
-        x={cellPlacement.x}
-        y={cellPlacement.y}
-        width={cellPlacement.size}
-        height={cellPlacement.size}
-      ></rect>
-    </g>
+    <rect className="emptyCell"
+      x="0"
+      y="0"
+      width={cellSize.width}
+      height={cellSize.height}
+      fill={"url(#diagonalHatch)"}
+    ></rect>
   )
 }
 
