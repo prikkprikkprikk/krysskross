@@ -119,19 +119,8 @@ export const puzzleCells: CellData[] = [
   // Row 3
   {
     position: { row: 3, col: 0 },
-    cellType: 'clue',
-    clues: [
-      {
-        startCell: { row: 3, col: 1 },
-        direction: 'across',
-        text: ['GJÆR-','MAKER']
-      },
-      {
-        startCell: { row: 4, col: 0 },
-        direction: 'across',
-        text: ['FEIDE']
-      },
-    ]
+    cellType: 'solution',
+    letter: 'F',
   },
   {
     position: { row: 3, col: 1 },
@@ -151,14 +140,25 @@ export const puzzleCells: CellData[] = [
   {
     position: { row: 3, col: 4 },
     cellType: 'solution',
-    letter: 'N'
+    letter: 'S'
   },
 
   // Row 4
   {
     position: { row: 4, col: 0 },
-    cellType: 'solution',
-    letter: 'T'
+    cellType: 'clue',
+    clues: [
+      {
+        startCell: { row: 3, col: 0 },
+        direction: 'across',
+        text: ['TILLIT']
+      },
+      {
+        startCell: { row: 4, col: 1 },
+        direction: 'across',
+        text: ['KLOKT']
+      },
+    ]
   },
   {
     position: { row: 4, col: 1 },
