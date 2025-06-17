@@ -7,7 +7,7 @@
 }
 
 .cellBackground {
-  fill: #ffffff;
+  fill: transparent;
   stroke: #000000;
   stroke-width: var(--strokeWidth);
   cursor: pointer;

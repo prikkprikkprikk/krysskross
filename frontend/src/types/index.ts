@@ -1,5 +1,5 @@
 export type {
-  CellSize,
+  Dimensions,
   GridPosition,
   GridSpan,
   CanvasPosition,

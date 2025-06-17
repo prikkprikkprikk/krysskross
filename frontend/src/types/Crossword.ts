@@ -2,6 +2,8 @@ import type {GridPosition} from "./CellGeometry.ts";
 
 export type Direction = 'across' | 'down';
 
+export type Location = 'above' | 'below' | 'left' | 'right' | undefined;
+
 export type CellType = 'empty' | 'solution' | 'clue';
 
 export interface BaseCellData {
@@ -21,7 +23,7 @@ export interface SolutionCellData extends BaseCellData {
 export interface ClueData {
   startCell: GridPosition;
   direction: Direction;
-  text: string;
+  text: string[];
 }
 
 export interface ClueCellData extends BaseCellData {

@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import type {Direction, CrosswordPuzzleData, CellType} from "../types/crossword";
+import type {Direction, CrosswordPuzzleData, CellType} from "../types/Crossword.ts";
 import Cell from "./Cell"
 import { useCallback, useEffect, useState } from "react";
 import type {CellGeometry} from "../types";
@@ -21,7 +21,6 @@ function CrosswordPuzzle(puzzleProps: CrosswordPuzzleProps) {
         {
           const newCursorDirection = cursorDirection === 'across' ? 'down' : 'across';
           setCursorDirection(newCursorDirection);
-          console.log(newCursorDirection);
           break;
         }
     }
@@ -37,7 +36,6 @@ function CrosswordPuzzle(puzzleProps: CrosswordPuzzleProps) {
   const handleCellClick = useCallback((row: number, col: number) => {
     const newSelectedCell = { row: row, col: col }
     setSelectedCell(newSelectedCell)
-    console.log("Selected cell:", newSelectedCell);
   }, [])
 
   function cellGeometryFactory(col: number, row: number) : CellGeometry {
@@ -69,13 +67,26 @@ function CrosswordPuzzle(puzzleProps: CrosswordPuzzleProps) {
       height={puzzleData.rows * puzzleData.cellSize + strokeWidth}
     >
       <defs>
+        {/* Clip path for cells, used by the selected cell's highlight stroke */}
         <clipPath id="cellClipPath">
           <rect x="0" y="0" width={puzzleData.cellSize} height={puzzleData.cellSize}></rect>
         </clipPath>
+        {/* Empty cell */}
         <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" width="10" height="10">
           <path d="M0,10 L10,0 M-1,1 L1,-1 M9,11 L11,9"
               style={{ stroke: 'black', strokeWidth: strokeWidth }} />
         </pattern>
+        {/* Arrowhead */}
+        <marker
+          id="arrowhead"
+          viewBox="0 0 10 10"
+          refX="5"
+          refY="5"
+          markerWidth="7"
+          markerHeight="7"
+          orient="auto-start-reverse">
+          <path d="M 0 0 L 7 5 L 0 10 z" />
+        </marker>
       </defs>
 
       <g transform={`translate(${strokeWidth/2}, ${strokeWidth/2})`}>

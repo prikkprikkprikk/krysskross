@@ -1,6 +1,6 @@
 import type {CellGeometry} from "../types";
 import type {MouseEvent} from "react";
-import type {CellData, ClueCellData, SolutionCellData} from "../types/crossword";
+import type {CellData, ClueCellData, SolutionCellData} from "../types/Crossword.ts";
 import EmptyCell from "./cell-types/EmptyCell";
 import SolutionCell from "./cell-types/SolutionCell";
 import ClueCell from "./cell-types/ClueCell";
@@ -32,7 +32,7 @@ function Cell({cellData, cellGeometry, className, onCellClick}: CellProps) {
       return <SolutionCell cellSize={{width, height}} solutionLetter={solutionCellData.letter}></SolutionCell>;
     } else if (cellData.cellType === 'clue') {
       const clueCellData = cellData as ClueCellData;
-      return <ClueCell clues={clueCellData.clues} cellSize={{width, height}}></ClueCell>;
+      return <ClueCell gridPosition={cellData.position} clues={clueCellData.clues} cellSize={{width, height}}></ClueCell>;
     }
   }
 

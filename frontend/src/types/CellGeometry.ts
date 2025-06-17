@@ -1,4 +1,4 @@
-export interface CellSize {
+export interface Dimensions {
   width: number;
   height: number;
 }
@@ -22,5 +22,11 @@ export interface CellGeometry {
   position: GridPosition;
   span: GridSpan;
   canvasPosition: CanvasPosition;
-  canvasSize: CellSize;
+  canvasSize: Dimensions;
+}
+
+export interface ClueLayout {
+  y: number;
+  dimensions: Dimensions;
+  lineCount: number;
 }

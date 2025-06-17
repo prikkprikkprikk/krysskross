@@ -1,7 +1,7 @@
-import type {CellSize} from "../../types";
+import type {Dimensions} from "../../types";
 
 export interface SolutionCellProps {
-  cellSize: CellSize;
+  cellSize: Dimensions;
   solutionLetter: string;
 }
 

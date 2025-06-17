@@ -1,7 +1,7 @@
-import type {CellSize} from "../../types";
+import type {Dimensions} from "../../types";
 
 interface EmptyCellProps {
-  cellSize: CellSize;
+  cellSize: Dimensions;
 }
 
 function EmptyCell({cellSize}: EmptyCellProps) {
