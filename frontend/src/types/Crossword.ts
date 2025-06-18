@@ -39,5 +39,5 @@ export interface CrosswordPuzzleData {
   rows: number;
   cols: number;
   cellSize: number;
-  cells: CellData[];
+  cells: CellData[][];
 }
