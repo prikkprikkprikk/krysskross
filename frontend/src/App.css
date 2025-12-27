@@ -14,6 +14,8 @@
 }
 
 .cell {
+  mix-blend-mode: multiply;
+
   text {
     pointer-events: none;
     font-weight: 500;
@@ -37,6 +39,14 @@
     }
   }
 
+  &.symmetric-highlight {
+    rect.highlight {
+      fill: #ffe6f2;
+      stroke: #e24a90;
+      stroke-width: 3px;
+    }
+  }
+
   .emptyCell {
   }
 
@@ -45,5 +55,16 @@
       font-size: 10px;
       font-weight: 600;
     }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

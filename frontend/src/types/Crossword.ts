@@ -33,7 +33,9 @@ export interface ClueCellData extends BaseCellData {
 
 export type CellData = EmptyCellData | SolutionCellData | ClueCellData;
 
-export interface CrosswordPuzzleData {
+// Arrow-word puzzle data (Scandinavian style with embedded clues)
+export interface ArrowWordPuzzleData {
+  puzzleType: 'arrowword';
   id: string;
   title: string;
   rows: number;
@@ -41,3 +43,6 @@ export interface CrosswordPuzzleData {
   cellSize: number;
   cells: CellData[][];
 }
+
+// Legacy alias for backward compatibility
+export type CrosswordPuzzleData = ArrowWordPuzzleData;

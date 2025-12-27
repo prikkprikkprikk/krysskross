@@ -52,7 +52,7 @@ export const puzzleCells: CellData[][] = [
         {
           startCell: { row: 1, col: 4 },
           direction: 'down',
-          text: ['PURT']
+          text: ['GJEN-', 'PART']
         }
       ]
     }
@@ -193,6 +193,7 @@ export const puzzleCells: CellData[][] = [
 ];
 
 export const samplePuzzle: CrosswordPuzzleData = {
+  puzzleType: 'arrowword',
   id: 'sample-puzzle-01',
   title: 'Test-kryssord',
   rows: 5,
