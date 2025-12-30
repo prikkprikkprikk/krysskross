@@ -28,64 +28,64 @@ function cellHasLetter(cell: TraditionalCellData): boolean {
 /**
  * Get all cells in a word starting from a position
  */
-function getWordCells(
-  cells: TraditionalCellData[][],
-  row: number,
-  col: number,
-  direction: Direction
-): { row: number; col: number }[] {
-  const wordCells: { row: number; col: number }[] = [];
-
-  // First, go backwards to find the start of the word
-  let startRow = row;
-  let startCol = col;
-
-  if (direction === 'across') {
-    while (startCol > 0 && cells[startRow][startCol - 1].cellType === 'solution') {
-      startCol--;
-    }
-  } else { // down
-    while (startRow > 0 && cells[startRow - 1][startCol].cellType === 'solution') {
-      startRow--;
-    }
-  }
-
-  // Now collect all cells in the word
-  if (direction === 'across') {
-    let c = startCol;
-    while (c < cells[startRow].length && cells[startRow][c].cellType === 'solution') {
-      wordCells.push({ row: startRow, col: c });
-      c++;
-    }
-  } else { // down
-    let r = startRow;
-    while (r < cells.length && cells[r][startCol].cellType === 'solution') {
-      wordCells.push({ row: r, col: startCol });
-      r++;
-    }
-  }
-
-  return wordCells;
-}
+// function getWordCells(
+//   cells: TraditionalCellData[][],
+//   row: number,
+//   col: number,
+//   direction: Direction
+// ): { row: number; col: number }[] {
+//   const wordCells: { row: number; col: number }[] = [];
+//
+//   // First, go backwards to find the start of the word
+//   let startRow = row;
+//   let startCol = col;
+//
+//   if (direction === 'across') {
+//     while (startCol > 0 && cells[startRow][startCol - 1].cellType === 'solution') {
+//       startCol--;
+//     }
+//   } else { // down
+//     while (startRow > 0 && cells[startRow - 1][startCol].cellType === 'solution') {
+//       startRow--;
+//     }
+//   }
+//
+//   // Now collect all cells in the word
+//   if (direction === 'across') {
+//     let c = startCol;
+//     while (c < cells[startRow].length && cells[startRow][c].cellType === 'solution') {
+//       wordCells.push({ row: startRow, col: c });
+//       c++;
+//     }
+//   } else { // down
+//     let r = startRow;
+//     while (r < cells.length && cells[r][startCol].cellType === 'solution') {
+//       wordCells.push({ row: r, col: startCol });
+//       r++;
+//     }
+//   }
+//
+//   return wordCells;
+// }
 
 /**
  * Check if any letters are filled in for a word, excluding a specific cell
  */
-function wordHasLetters(
-  cells: TraditionalCellData[][],
-  wordCells: { row: number; col: number }[],
-  excludeRow?: number,
-  excludeCol?: number
-): boolean {
-  return wordCells.some(pos => {
-    // Skip the excluded cell
-    if (excludeRow !== undefined && excludeCol !== undefined &&
-        pos.row === excludeRow && pos.col === excludeCol) {
-      return false;
-    }
-    return cellHasLetter(cells[pos.row][pos.col]);
-  });
-}
+// function wordHasLetters(
+//   cells: TraditionalCellData[][],
+//   wordCells: { row: number; col: number }[],
+//   excludeRow?: number,
+//   excludeCol?: number
+// ): boolean {
+//   return wordCells.some(pos => {
+//     // Skip the excluded cell
+//     if (excludeRow !== undefined && excludeCol !== undefined &&
+//         pos.row === excludeRow && pos.col === excludeCol) {
+//       return false;
+//     }
+//     return cellHasLetter(cells[pos.row][pos.col]);
+//   });
+// }
 
 /**
  * Check if toggling a cell to blocked would break an existing word with letters

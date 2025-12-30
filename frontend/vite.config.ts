@@ -5,4 +5,26 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/',
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://krysskross.test',
+        changeOrigin: true,
+        secure: false, // Accept self-signed Valet certificate
+      },
+      '/admin': {
+        target: 'https://krysskross.test',
+        changeOrigin: true,
+        secure: false, // Accept self-signed Valet certificate
+      },
+    },
+  },
+  build: {
+    outDir: '../backend/public/dist',
+    emptyOutDir: true,
+    manifest: true,
+    rollupOptions: {
+      input: '/src/main.tsx',
+    },
+  },
 })
