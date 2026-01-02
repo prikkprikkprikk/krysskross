@@ -3,6 +3,24 @@
 ## Overview
 Implement comprehensive test coverage for the Krysskross application, focusing on puzzle management, revisions, and API functionality.
 
+## Test File Structure
+
+```
+tests/
+├── Feature/
+│   ├── Models/
+│   │   ├── PuzzleTest.php
+│   │   └── RevisionTest.php
+│   ├── Filament/
+│   │   ├── PuzzleResourceTest.php
+│   │   ├── CreatePuzzleTest.php
+│   │   └── EditPuzzleTest.php
+│   ├── Api/
+│   │   ├── SaveRevisionTest.php
+│   │   └── LoadRevisionTest.php
+│   └── PuzzleWorkflowTest.php
+```
+
 ## Test Structure
 
 ### 1. Feature Tests
